@@ -1,0 +1,68 @@
+import React, { useEffect, useState } from "react";
+import StylishDropdown from "../assets/StylishDropdown";
+
+const NavBar = ({ pokemon }) => {
+  const [search, setSearch] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
+  const [pokemonTypes, setPokemonTypes]=useState([]);
+
+  // Get unique Pokemon types and format them for dropdown
+  const getPokemonTypes = () => {
+    // Get all types in a flat array
+    const allTypes = pokemon.flatMap((pokemon) =>
+      pokemon.types.map((type) => type.type.name)
+    );
+
+    // Get unique types
+    const uniqueTypes = [...new Set(allTypes)];
+
+    // Format for dropdown
+    return uniqueTypes.map((type) => ({
+      value: type,
+      label: type.charAt(0).toUpperCase() + type.slice(1),
+    }));
+  };
+
+  useEffect(()=>{
+    setPokemonTypes(getPokemonTypes());
+  },[]);
+
+  console.log(search);
+  // Handler for selection changes
+  const handleChange = (option) => {
+    setSelectedValue(option.value);
+    console.log("Selected:", option);
+  };
+
+  return (
+    <div className="w-full h-14 sm:h-16 bg-gray-900 flex justify-between items-center px-7!">
+      <div className="text-2xl text-white">Hello Pokiee</div>
+
+      {/* 2nd div  */}
+      <div className="flex gap-4 items-center">
+        {/* search by name  */}
+        <div className="">
+          <input
+            className="border-1 border-red-300 focus:outline-red-200 rounded-xl placeholder:text-amber-50 px-2.5! bg-gray-800 py-1! text-white"
+            type="text"
+            name="search"
+            id="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search Pokemon by Name"
+          />
+        </div>
+
+        {/* dropdown search  */}
+        {/* StylishDropdown Implementation */}
+        <StylishDropdown
+          options={pokemonTypes}
+          onChange={handleChange}
+          placeholder="Select Types"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default NavBar;

@@ -1,0 +1,173 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100italic,300,300italic);
+
+$text : rgb(229, 140, 135);
+$shadow : rgba(39, 47, 37, 0.863);
+// $background : bisque;
+
+@mixin supershadow($offset) {
+	$w : $offset;	
+	$c : $shadow;
+	$d : darken($c, 25%);
+	$e : lighten($c, 25%);
+	$f : darken($c, 50%);
+	$g : darken($c, 50%);
+	$h : lighten($c, 25%);
+	$i : darken($c, 50%);
+
+	text-shadow:
+		$w*1 $w*1 $d,
+		$w*2 $w*2 $d,
+		$w*3 $w*3 $d,
+		$w*4 $w*4 $d,
+		$w*5 $w*5 $d,
+		$w*6 $w*6 $d,
+		$w*7 $w*7 $d,
+		$w*8 $w*8 $d,
+		$w*9 $w*9 $d,
+		$w*10 $w*10 $d,
+		$w*11 $w*11 $d,
+		$w*12 $w*12 $d,
+		$w*13 $w*13 $d,
+		$w*14 $w*14 $d,
+		$w*15 $w*15 $d,
+		-$w*1 $w*1 $c,
+		-$w*2 $w*2 $c,
+		-$w*3 $w*3 $c,
+		-$w*4 $w*4 $c,
+		-$w*5 $w*5 $c,
+		-$w*6 $w*6 $c,
+		-$w*7 $w*7 $c,
+		-$w*8 $w*8 $c,
+		-$w*9 $w*9 $c,
+		-$w*10 $w*10 $c,
+		-$w*11 $w*11 $c,
+		-$w*12 $w*12 $c,
+		-$w*13 $w*13 $c,
+		-$w*14 $w*14 $c,
+		-$w*15 $w*15 $c,
+		-$w*1 (-$w*1) $e,
+		-$w*2 (-$w*2) $e,
+		-$w*3 (-$w*3) $e,
+		-$w*4 (-$w*4) $e,
+		-$w*5 (-$w*5) $e,
+		-$w*6 (-$w*6) $e,
+		-$w*7 (-$w*7) $e,
+		-$w*8 (-$w*8) $e,
+		-$w*9 (-$w*9) $e,
+		-$w*10 (-$w*10) $e,
+		-$w*11 (-$w*11) $e,
+		-$w*12 (-$w*12) $e,
+		-$w*13 (-$w*13) $e,
+		-$w*14 (-$w*14) $e,
+		-$w*15 (-$w*15) $e,
+		$w*1 (-$w*1) $c,
+		$w*2 (-$w*2) $c,
+		$w*3 (-$w*3) $c,
+		$w*4 (-$w*4) $c,
+		$w*5 (-$w*5) $c,
+		$w*6 (-$w*6) $c,
+		$w*7 (-$w*7) $c,
+		$w*8 (-$w*8) $c,
+		$w*9 (-$w*9) $c,
+		$w*10 (-$w*10) $c,
+		$w*11 (-$w*11) $c,
+		$w*12 (-$w*12) $c,
+		$w*13 (-$w*13) $c,
+		$w*14 (-$w*14) $c,
+		$w*15 (-$w*15) $c,
+		0 (-$w*1) $f,
+		0 (-$w*2) $f,
+		0 (-$w*3) $f,
+		0 (-$w*4) $f,
+		0 (-$w*5) $f,
+		0 (-$w*6) $f,
+		0 (-$w*7) $f,
+		0 (-$w*8) $f,
+		0 (-$w*9) $f,
+		0 (-$w*10) $f,
+		0 (-$w*11) $f,
+		0 (-$w*12) $f,
+		0 (-$w*13) $f,
+		0 (-$w*14) $f,
+		0 (-$w*15) $f,
+		0 $w*1 $g,
+		0 $w*2 $g,
+		0 $w*3 $g,
+		0 $w*4 $g,
+		0 $w*5 $g,
+		0 $w*6 $g,
+		0 $w*7 $g,
+		0 $w*8 $g,
+		0 $w*9 $g,
+		0 $w*10 $g,
+		0 $w*11 $g,
+		0 $w*12 $g,
+		0 $w*13 $g,
+		0 $w*14 $g,
+		0 $w*15 $g,
+		(-$w*1) 0 $h,
+		(-$w*2) 0 $h,
+		(-$w*3) 0 $h,
+		(-$w*4) 0 $h,
+		(-$w*5) 0 $h,
+		(-$w*6) 0 $h,
+		(-$w*7) 0 $h,
+		(-$w*8) 0 $h,
+		(-$w*9) 0 $h,
+		(-$w*10) 0 $h,
+		(-$w*11) 0 $h,
+		(-$w*12) 0 $h,
+		(-$w*13) 0 $h,
+		(-$w*14) 0 $h,
+		(-$w*15) 0 $h,
+		$w*1 0 $i,
+		$w*2 0 $i,
+		$w*3 0 $i,
+		$w*4 0 $i,
+		$w*5 0 $i,
+		$w*6 0 $i,
+		$w*7 0 $i,
+		$w*8 0 $i,
+		$w*9 0 $i,
+		$w*10 0 $i,
+		$w*11 0 $i,
+		$w*12 0 $i,
+		$w*13 0 $i,
+		$w*14 0 $i,
+		$w*15 0 $i;
+}
+
+// body {
+// 	// display: flex;
+// 	// align-items: center;
+// 	// justify-content: center;
+// 	height: 100vh;
+// 	background:
+// 		repeating-linear-gradient(
+// 			45deg,
+// 			transparent,
+// 			transparent 2em,
+// 			rgba(255, 239, 213, 0.986) 0,
+// 			papayawhip 4em
+// 		),
+// 		repeating-linear-gradient(
+// 			-45deg,
+// 			transparent,
+// 			transparent 2em,
+// 			seashell 0,
+// 			seashell 4em
+// 		), snow;
+// 	background-blend-mode: multiply;
+// }
+
+  
+  .yuvi-fancy--text {
+	@include supershadow(0.4px); // Slightly smaller shadow offset
+	font: 100 40px/1 Alegreya Sans; // Reduced font size from 50px to 40px
+	letter-spacing: 6px; // Slightly reduced letter-spacing
+	text-align: center;
+	color: $text;
+
+  }
+  
+  

@@ -1,8 +1,129 @@
 @import "tailwindcss";
 
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Explora&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Monoton&family=Notable&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@layer components {
+    .yuvi-bungee {
+      font-family: 'Bungee Spice', cursive !important;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+}
+
+@layer components {
+  .dropdown-transition {
+    @apply transition-all duration-200 ease-in-out;
+  }
+}
+
+
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
+/* body color defined  */
+
+body{
+  background-color: #f1e5e5;
+}
+
+
+/* custom shadow for box */
+
+.custom-shadow{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+
+/* custom border for to dispaly the id  */
+.custom-border{
+    
+    border-radius: 0% 100% 0% 100% / 64% 0% 100% 36% ;
+    -webkit-border-radius: 0% 100% 0% 100% / 64% 0% 100% 36% ;
+    -moz-border-radius: 0% 100% 0% 100% / 64% 0% 100% 36% ;
+    -ms-border-radius: 0% 100% 0% 100% / 64% 0% 100% 36% ;
+    -o-border-radius: 0% 100% 0% 100% / 64% 0% 100% 36% ;
+}
+
+
+/* css for the display the types  */
+.yuvi-border{
+    border-radius: 0% 21% 25% 25% / 25% 93% 0% 0%;
+    padding-right:1rem ;
+    padding-left: 0.5rem;
+}
+
+
+
+.font-explora {
+    font-family: "Explora", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+
+  .pokemon-name{
+    background-color: transparent;
+    /* mix-blend-mode: luminosity; */
+ 
+  }
+
+  
+
+  /* css for display the image and its style  */
+  .card-image {
+    width: 100%;
+    height: 40%;
+    background-color: #d6576ed3;
+    margin-top: 1rem;
+    /* border: 3px solid red; */
+    border-radius: 47%53%46%54%/50%10%90%50%;
+    -webkit-border-radius: 47%53%46%54%/50%10%90%50%;
+    -moz-border-radius: 47%53%46%54%/50%10%90%50%;
+    -ms-border-radius: 47%53%46%54%/50%10%90%50%;
+    -o-border-radius: 47%53%46%54%/50%10%90%50%;
+  
+    & figure {
+      margin-top: 1rem;
+      width: 100%;
+      height: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+  
+      & img {
+        position: absolute;
+        width: 40%;
+        top: -25px;
+        transition: all linear 0.2s;
+        -webkit-transition: all linear 0.2s;
+        -moz-transition: all linear 0.2s;
+        -ms-transition: all linear 0.2s;
+        -o-transition: all linear 0.2s;
+  
+        &:hover {
+          scale: 0.8;
+        }
+      }
+    }
+  }
+  
+  .card-image:hover {
+    border-radius: 27% 73% 68% 32% / 73% 29% 71% 27%;
+    -webkit-border-radius: 27% 73% 68% 32% / 73% 29% 71% 27%;
+    -moz-border-radius: 27% 73% 68% 32% / 73% 29% 71% 27%;
+    -ms-border-radius: 27% 73% 68% 32% / 73% 29% 71% 27%;
+    -o-border-radius: 27% 73% 68% 32% / 73% 29% 71% 27%;
+  }
