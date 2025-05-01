@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import StylishDropdown from "../assets/StylishDropdown";
+// Fix the import path - StylishDropdown is in components folder
+import StylishDropdown from "../assets/StylishDropdown"; 
 
-const NavBar = ({ pokemon }) => {
-  const [search, setSearch] = useState("");
-  const [selectedValue, setSelectedValue] = useState("");
-  const [pokemonTypes, setPokemonTypes]=useState([]);
+const NavBar = ({
+  pokemon,
+  search,
+  setSearch,
+  selectedTypes,
+  setSelectedTypes,
+}) => {
+  const [pokemonTypes, setPokemonTypes] = useState([]);
 
   // Get unique Pokemon types and format them for dropdown
   const getPokemonTypes = () => {
@@ -14,7 +19,7 @@ const NavBar = ({ pokemon }) => {
     );
 
     // Get unique types
-    const uniqueTypes = [...new Set(allTypes)];
+    const uniqueTypes = ["all", ...new Set(allTypes)];
 
     // Format for dropdown
     return uniqueTypes.map((type) => ({
@@ -23,15 +28,13 @@ const NavBar = ({ pokemon }) => {
     }));
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setPokemonTypes(getPokemonTypes());
-  },[]);
+  }, [pokemon]);
 
-  console.log(search);
   // Handler for selection changes
   const handleChange = (option) => {
-    setSelectedValue(option.value);
-    console.log("Selected:", option);
+    setSelectedTypes(option.value);
   };
 
   return (
@@ -57,6 +60,7 @@ const NavBar = ({ pokemon }) => {
         {/* StylishDropdown Implementation */}
         <StylishDropdown
           options={pokemonTypes}
+          defaultValue={{ value: " ", label: "Select Types" }}
           onChange={handleChange}
           placeholder="Select Types"
         />
