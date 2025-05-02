@@ -38,11 +38,11 @@ const NavBar = ({
   };
 
   return (
-    <div className="w-full h-14 sm:h-16 bg-gray-900 flex justify-between items-center px-7!">
+    <div className="w-full h-35  sm:h-16 bg-gray-900 flex flex-col sm:flex-row justify-between items-center px-7!">
       <div className="text-2xl text-white">Hello Pokiee</div>
 
       {/* 2nd div  */}
-      <div className="flex gap-4 items-center">
+      <div className="flex mb-2! flex-col sm:flex-row gap-4 items-center">
         {/* search by name  */}
         <div className="">
           <input
